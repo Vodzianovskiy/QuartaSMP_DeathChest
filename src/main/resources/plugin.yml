@@ -1,0 +1,23 @@
+name: QuartaSMP_DeathChest
+version: '${version}'
+
+main: eu._Nightwarden.quartaSMP_DeathChest.QuartaSMP_DeathChest
+api-version: '1.21.11'
+load: POSTWORLD
+
+softdepend:
+  - DecentHolograms
+
+commands:
+  dc:
+    description: "Управление деасчестами"
+    usage: "/dc <list|admin|view|tp|clear|reload>"
+    aliases: [deathchest]
+
+permissions:
+  quartasmp.deathchest.use:
+    description: "Позволяет использовать деасчесты"
+    default: true
+  quartasmp.deathchest.admin:
+    description: "Админские команды деасчестов"
+    default: op

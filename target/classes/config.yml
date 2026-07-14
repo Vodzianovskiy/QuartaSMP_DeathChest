@@ -1,0 +1,71 @@
+# ─────────────────────────────────────────────
+# QuartaSMP_DeathChest Configuration
+# ─────────────────────────────────────────────
+
+chest:
+  # Название инвентаря при открытии (MiniMessage format)
+  # <i:false> отключает курсив
+  inventory-title: "<i:false><gradient:#FF4500:#FFD700>💀 Смерть {player}</gradient>"
+
+  # Частицы вокруг сундука
+  particles:
+    enabled: true
+    type: "SOUL_FIRE_FLAME"
+    interval: 40  # тиков между появлением
+    visible-distance: 32.0 # частицы спавнятся только если рядом есть игрок
+
+  # Безопасная установка death chest
+  placement:
+    search-radius: 8 # радиус поиска свободной позиции вокруг смерти
+    vertical-search-down: 96 # насколько глубоко искать твёрдую поверхность под игроком
+    emergency-platform-enabled: true # если вокруг пустота — создать платформу под сундуком
+    emergency-platform-material: "OBSIDIAN"
+
+# Голограмма над сундуком
+# Используется формат DecentHolograms (& для цветов, {#RRGGBB} для HEX)
+# &r - сброс форматирования (убирает курсив)
+hologram:
+  # Смещение по Y относительно блока (по умолчанию 2.5)
+  offset-y: 2.5
+  # Строки голограммы (максимум 3 строки)
+  lines:
+    - "&r&c&l☠ &4&lDEATH CHEST &c&l☠"
+    - "&r&7Владелец: &f{player}"
+    - "&r&8⏱ Ожидает открытия..."
+  # Строка таймера (когда сундук открыт)
+  timer-line: "&r&e⏱ Осталось: &f{time}"
+  # Строка когда время истекло
+  expired-line: "&r&c⏱ Истекает..."
+
+# Время жизни деасчеста ПОСЛЕ первого открытия (в секундах)
+# По умолчанию: 300 (5 минут)
+expire-time: 300
+
+# Максимальное время жизни деасчеста с момента создания (в секундах)
+# Если деасчест не открыли за это время — он удаляется автоматически
+# По умолчанию: 259200 (3 дня)
+max-age: 259200
+
+# Сообщения (MiniMessage format)
+# <i:false> отключает курсив
+messages:
+  chest-created: "<i:false><green>💀 Твой деасчест появился на <yellow><x>, <y>, <z></yellow></green>"
+  chest-collected: "<i:false><green>✅ Ты забрал все вещи из деасчеста!</green>"
+  chest-expired: "<i:false><red>⏰ Время деасчеста истекло! Вещи выпали на землю.</red>"
+  not-your-chest: "<i:false><red>❌ Это не твой деасчест!</red>"
+  chest-broken: "<i:false><red>⚠️ Твой деасчест был разрушен!</red>"
+  no-chests: "<i:false><yellow>У тебя нет активных деасчестов.</yellow>"
+  chest-list-header: "<i:false><gold>📋 Твои деасчесты:</gold>"
+  chest-list-entry: "<i:false><gold>• <click:run_command:/dc tp {id}><white>{id}</white></click> — <gray>{x}, {y}, {z} ({world})</gray></gold>"
+  admin-cleared: "<i:false><green>✅ Деасчесты игрока <yellow>{player}</yellow> удалены.</green>"
+  config-reloaded: "<i:false><green>✅ Конфиг перезагружен.</green>"
+  no-permission: "<i:false><red>⛔ У тебя нет прав на эту команду.</red>"
+  player-not-found: "<i:false><red>❌ Игрок не найден.</red>"
+  chest-not-found: "<i:false><red>❌ Деасчест не найден.</red>"
+  teleported: "<i:false><green>✅ Телепортирован к деасчесту <yellow>{id}</yellow></green>"
+  compass-selected: "<i:false><green>✅ Компас перенаправлен на сундук #<yellow>{id}</yellow></green>"
+  compass-deleted: "<i:false><red>🗑 Компас смерти удалён из инвентаря.</red>"
+  chest-deleted: "<i:false><red>🗑 Деасчест #<yellow>{id}</yellow> удалён!</red>"
+  confirm-delete: "<i:false><red>⚠ Нажми ПКМ ещё раз для подтверждения удаления!</red>"
+  cant-move-compass: "<i:false><red>❌ Нельзя переместить компас смерти!</red>"
+  cant-drop-compass: "<i:false><red>❌ Нельзя выбросить компас смерти!</red>"
