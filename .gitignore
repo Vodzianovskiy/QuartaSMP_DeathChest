@@ -1,0 +1,71 @@
+# ─────────────────────────────────────────────
+# Java / Maven
+# ─────────────────────────────────────────────
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.log
+
+# Maven wrapper / build backup files
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+dependency-reduced-pom.xml
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# ─────────────────────────────────────────────
+# IDEs / Editors
+# ─────────────────────────────────────────────
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+
+# ─────────────────────────────────────────────
+# OS generated files
+# ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─────────────────────────────────────────────
+# Logs / temporary files
+# ─────────────────────────────────────────────
+logs/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ─────────────────────────────────────────────
+# Local Minecraft / Paper test servers
+# ─────────────────────────────────────────────
+server/
+test-server/
+run/
+world/
+world_nether/
+world_the_end/
+plugins/*.jar
+plugins/*/data/
+plugins/*/logs/
+
+# ─────────────────────────────────────────────
+# Runtime plugin data
+# ─────────────────────────────────────────────
+data/
+*.db
+*.sqlite
+*.sqlite3
